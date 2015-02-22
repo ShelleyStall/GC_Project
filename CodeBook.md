@@ -1,6 +1,7 @@
 CodeBook / Data Dictionary - Getting and Cleaning Data Project
 
-Activity - The type of activity performed by the subject when the measurements were taken.  The data was transformed from integer values 1-6 representing each activity to the string values below.
+Activity - An identifier in the data.  Defines the type of activity performed by the subject when the measurements were taken.  The data was transformed from integer values 1-6 representing each activity to the string values below.
+      Units: No unit assigned as this is identifier data.
 
       WALKING
       WALKING_UPSTAIRS
@@ -9,12 +10,14 @@ Activity - The type of activity performed by the subject when the measurements w
       STANDING
       LAYING
 
-Subject - An integer value representing one of 30 subjects/participants included in the data.  No data transformation was performed.
+Subject - An identifier in the data. An integer value representing one of 30 subjects/participants included in the data.  No data transformation was performed.
+      Units: No unit assigned as this is identifier data.
 
       1..30
 
-Next 79 data elements - Calculated Values
-      The average of each of the 79 measurement types grouped by Activity and Subject.  Measurement types include the Mean or Standard Deviation calculated from the captured data for either time or frequency domain variable. 
+Next 79 data elements - Calculated Values - These are variables in the data.
+      The average of each of the 79 measurement types grouped by Activity and Subject.  Measurement types include the Mean or Standard Deviation calculated from the captured data for either time or frequency domain variable.
+      Units: The data has been normalised.  This means each entry was divided by its range. This activity cancelled the units.   	  
 
       't' or 'f'          - time or frequency domain
       'Body' or 'Gravity' - Indicating body or gravity acceleration.
