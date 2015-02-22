@@ -2,12 +2,13 @@
 
 The assignment is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
 
-Submission includes: 
-1) a tidy data set as described below, 
-2) a link to my Github repository that includes:
-     A) run_analysis.R - the script for performing the analysis, see details below
-     B) CodeBook.md - a code book that describes the variables, the data, and any transformations or work that was performed to clean up the data.
-     C) README.md - explains the project, the data, and the run_analysis.R script.  
+**Submission includes:**
+
+        1) a tidy data set as described below, 
+        2) a link to my Github repository that includes:
+           A) run_analysis.R - the script for performing the analysis, see details below
+           B) CodeBook.md - a code book that describes the variables, the data, and any transformations or work that was performed to clean up the data.
+           C) README.md - explains the project, the data, and the run_analysis.R script.  
 
 One of the most exciting areas in all of data science right now is wearable computing. Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 
@@ -31,30 +32,31 @@ The detailed steps as defined in the run_analysis.R file include:
 
  run_analysis.R
  This script does the following activities necessary to create the tidy data set:
-   1) Reads in the measurement files 
+ 
+    1) Reads in the measurement files 
           ./UCI HAR Dataset/test/X_test.txt
           ./UCI HAR Dataset/train/X_train.txt
-   2) Combines the measurement files X_train and X_test using rbind()
+    2) Combines the measurement files X_train and X_test using rbind()
       There are 561 measurement types and 10,299 observations.
-   3) Reads in the features file that describes each measurement
+    3) Reads in the features file that describes each measurement
           ./UCI HAR Dataset/features.txt
-   4) Assigns column names using the features.txt file    
-   5) Extracts only the columns with measurements that were 
+    4) Assigns column names using the features.txt file    
+    5) Extracts only the columns with measurements that were 
         calculated for the mean and standarad deviation of the data  
         This was determined by selecting only column names that contained
         "mean" or "std" as part of their description.
       There are 79 measurement types that fit this criteria.
-   6) Reads in the subject information files
+    6) Reads in the subject information files
           ./UCI HAR Dataset/test/subject_test.txt
           ./UCI HAR Dataset/train/subject_train.txt
-   7) Combines the subject information files subject_train and subject_test using rbind()        
-   8) Define the column name to the subject information as "Subject"
-   9) Reads in the activities files describing the activity for each measurement
+    7) Combines the subject information files subject_train and subject_test using rbind()        
+    8) Define the column name to the subject information as "Subject"
+    9) Reads in the activities files describing the activity for each measurement
           ./UCI HAR Dataset/test/y_test.txt
           ./UCI HAR Dataset/train/y_train.txt
-   10) Combines the activities files y_train and y_test using rbind()        
-   11) Define the column name to the activity information as "Activity"
-   12) Transform the activity numbers to names using the following guide
+    10) Combines the activities files y_train and y_test using rbind()        
+    11) Define the column name to the activity information as "Activity"
+    12) Transform the activity numbers to names using the following guide
         1 -> WALKING
         2 -> WALKING_UPSTAIRS
         3 -> WALKING_DOWNSTAIRS
@@ -68,12 +70,14 @@ The detailed steps as defined in the run_analysis.R file include:
     14) Associate each measurement with the correct subject and activity using cbind()
 
  The script continues by performing some analysis: 
-    A) Define the data identifiers and variables using melt.
-    B) Determine the average of each measurement grouping by Subject and Activity.
+
+         A) Define the data identifiers and variables using melt.
+         B) Determine the average of each measurement grouping by Subject and Activity.
    
  Output:
-   The resulting analysis file is written to the working directory. 
-   The filename is tidyDataSet.txt
+
+      The resulting analysis file is written to the working directory. 
+      The filename is tidyDataSet.txt
 
  Data: It is expected that the data provided from UCI is unzipped in your working
      directory.  In other words, the folder "UCI HAR Dataset" should be in your
@@ -82,12 +86,14 @@ The detailed steps as defined in the run_analysis.R file include:
  Packages that are needed include: data.table and reshape2 
 
  Viewing Output:
-   To read in the file and View the contents the following commands can be used
-     filename <- "./tidyDataSet.txt"
-     myfile <- data.table(read.table(filename, header = T, stringsAsFactors=FALSE))
+
+    To read in the file and View the contents the following commands can be used
+      filename <- "./tidyDataSet.txt"
+      myfile <- data.table(read.table(filename, header = T, stringsAsFactors=FALSE))
 
 
-## Tidy Data is defined as:
+## Tidy Data is defined as: 
+
  1) Each variable forms a column
  2) Each observation forms a row
  3) Each type of observational unit forms a table
@@ -100,16 +106,18 @@ The detailed steps as defined in the run_analysis.R file include:
  
 ## Loading the data to perform analysis:
 When loading the dataset into R, please consider the following:
-1. The files are rather large, and not all of them are necessary for the analysis. 
-2. Extract the files from the zip file into the working directory such that the folder "UCI HAR Dataset" is in your working directory.  The script will be able to locate the files with this proper placement.
+
+    1. The files are rather large, and not all of them are necessary for the analysis. 
+    2. Extract the files from the zip file into the working directory such that the folder "UCI HAR Dataset" is in your working directory.  The script will be able to locate the files with this proper placement.
 
 ## Loading the tidy data data set to review the contents:
-1. Place the file in your working directory.
-2. Use the following commands:
-filename <- "./tidyDataSet.txt"
-myfile <- data.table(read.table(filename, header = T, stringsAsFactors=FALSE))
-3. To display data for review: 
-View(myfile) 
+
+    1. Place the file in your working directory.
+    2. Use the following commands:
+       filename <- "./tidyDataSet.txt"
+       myfile <- data.table(read.table(filename, header = T, stringsAsFactors=FALSE))
+    3. To display data for review: 
+       View(myfile) 
  
 ## Information about experiment conducted to collect the data
 
